@@ -4,7 +4,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 module.exports.bcrypt = bcrypt;
 
-require('dotenv').config({ path: __dirname + '/config/.env' });
+require('dotenv').config({ path: __dirname + '.env' });
 
 const app = express();
 app.use(cors());
