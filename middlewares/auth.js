@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const asyncHandler = require('./asyncHandler');
 
-// const crypto = require("crypto");
 // console.log(crypto.randomBytes(64).toString('hex'));
 
 exports.protect = asyncHandler((req, res, next) => {

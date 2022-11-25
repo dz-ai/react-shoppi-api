@@ -21,7 +21,7 @@ app.use('/order', order);
 
 app.listen(process.env.PORT || 3300, () => console.log('3300'));
 
-mongoose.connect('mongodb+srv://davidZim:SctU3HLxKp99LOyY@shoppi-shop.mb6zdol.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
