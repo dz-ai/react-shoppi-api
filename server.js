@@ -6,9 +6,9 @@ module.exports.bcrypt = bcrypt;
 
 
 // for use remote server
-//require('dotenv').config({ path: __dirname + '.env' });
+require('dotenv').config({ path: __dirname + '.env' });
 // for use localhost
-require('dotenv').config();
+//require('dotenv').config();
 
 const app = express();
 app.use(cors());
