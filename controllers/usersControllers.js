@@ -60,7 +60,7 @@ exports.findUserInDB = (asyncHandler(async (req, res, next) => {
     if (!user) {
         next(new Error('no user found'));
     } else {
-        res.json({userLog: true, username: user.username});
+        res.json({userLog: true, username: user.username, message: 'login successfully'});
     }
 }));
 
