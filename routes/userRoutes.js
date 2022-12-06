@@ -1,5 +1,5 @@
 const express = require('express');
-const {creatUser, loginUser, findUserInDB} = require("../controlers/usersControlers");
+const {creatUser, loginUser, findUserInDB} = require("../controllers/usersControllers");
 const {protect} = require("../middlewares/auth");
 
 const router = express.Router({mergeParams: true});

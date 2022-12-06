@@ -4,16 +4,22 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 module.exports.bcrypt = bcrypt;
 
-require('dotenv').config({ path: __dirname + '.env' });
+
+// for use remote server
+//require('dotenv').config({ path: __dirname + '.env' });
+// for use localhost
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+const products = require('./routes/productRout');
 const users = require('./routes/userRoutes');
 const carts = require('./routes/cartRoutes');
 const order = require('./routes/orderRoutes');
 
+app.use('/products', products);
 app.use('/users', users);
 app.use('/carts', carts);
 app.use('/order', order);

@@ -1,6 +1,6 @@
 const express = require('express');
 const {protect} = require("../middlewares/auth");
-const {submitUserOrder} = require('../controlers/orderControlers');
+const {submitUserOrder} = require('../controllers/orderControllers');
 const {pay} = require("../middlewares/payment");
 
 const router = express.Router({mergeParams: true});

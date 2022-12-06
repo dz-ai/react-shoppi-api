@@ -1,6 +1,6 @@
 const express = require('express');
 const {protect} = require("../middlewares/auth");
-const {saveUserCart, savedUsersCart, clearUserCart} = require('../controlers/cartControlers');
+const {saveUserCart, savedUsersCart, clearUserCart} = require('../controllers/cartControllers');
 
 const router = express.Router({mergeParams: true});
 
