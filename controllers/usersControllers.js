@@ -25,9 +25,10 @@ exports.creatUser = asyncHandler(async (req, res) => {
 });
 
 exports.loginUser = asyncHandler( async (req, res, next) => {
-    const {email, password} = req.body;
-    if (!email || !password) {
-        res.json({isSign: false, message: 'please provide a valid mail and password'});
+    const {username, email, password} = req.body;
+
+    if (!username || !email || !password) {
+        res.json({isSign: false, message: 'please provide username a valid mail and password'});
     }
 
     const user = await User.findOne({email}).select('+password');
@@ -37,6 +38,14 @@ exports.loginUser = asyncHandler( async (req, res, next) => {
             message: 'not a signed user please sign in first (or check email spelling)'
         });
         return next(new Error('not signed'));
+    }
+
+    if (username !== user.username) {
+        res.json({
+            isSign: false,
+            message: 'username is incorrect'
+        });
+        return next(new Error('incorrect username'));
     }
 
     const isMatch = await user.matchPassword(password);

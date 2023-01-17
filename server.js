@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3300;
 // for use remote server
 require('dotenv').config({ path: __dirname + '.env' });
 // for use localhost
-//require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 app.use(cors());
