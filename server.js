@@ -4,6 +4,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 module.exports.bcrypt = bcrypt;
 
+const PORT = process.env.PORT || 3300;
 
 // for use remote server
 require('dotenv').config({ path: __dirname + '.env' });
@@ -25,7 +26,7 @@ app.use('/carts', carts);
 app.use('/order', order);
 
 
-app.listen(process.env.PORT || 3300, () => console.log('3300'));
+app.listen(process.env.PORT || 3300, () => console.log(PORT));
 
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
