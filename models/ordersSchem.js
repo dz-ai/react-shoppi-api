@@ -8,6 +8,10 @@ const Order = new mongoose.Schema({
     total: {
       type: String,
     },
+    shippingAddress: {
+      type: Object,
+      required: true,
+    },
     status: {
        type: String,
         required: true,

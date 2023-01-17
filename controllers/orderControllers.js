@@ -2,10 +2,11 @@ const Order = require('../models/ordersSchem');
 const User = require('../models/userSchem');
 const asyncHandler = require('../middlewares/asyncHandler');
 
-exports.submitUserOrder = asyncHandler(async (req, res, next) => {
+
+exports.submitUserOrder = asyncHandler(async (req, res) => {
 
     if (req.pay) {
-        const order = await Order.create(req.body)
+         await Order.create(req.body)
             .then((order) => {
                 return User.findByIdAndUpdate(req.decodeUserId.id ,
                     {$push: {orders: order._id}},
